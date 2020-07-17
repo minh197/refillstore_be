@@ -1,7 +1,15 @@
 var express = require('express');
-var router = express.Router();
-const {getAllTheProducts} = require("../controllers/productController") 
+var router = express.Router({mergeParams:true});
+const {getAllTheProducts, createProducts,getSingleProduct} = require("../controllers/productController") 
 
-router.get('/', getAllTheProducts);
+
+
+router.route("/")
+.get(getAllTheProducts)
+
+
+
+router.route("/:id")
+.get(getSingleProduct)
 
 module.exports = router;
