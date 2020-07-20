@@ -1,5 +1,4 @@
 const Product = require("../models/Products.js")
-
 const PAGE_SIZE =25; 
 const getAllTheProducts = async(req,res)=>{
 const pageNum = req.query.page || 1;
@@ -17,6 +16,9 @@ res.send({
 
 })
 }
+
+
+
 
 
 const getSingleProduct = async (req, res) => {
