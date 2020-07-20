@@ -15,10 +15,10 @@ exports.loginFacebook = async (req,res,next) =>{
         const user = await User.findOneOrCreate({name:data.data.name ,
          email: data.data.email})
         const token = await user.generateToken()
-        return res.redirect(`http://localhost:3000/home/?token=${token}`) 
+        return res.json({status: "ok", data:user,token})
     }
     catch (err){
-        return res.redirect('http://localhost:3000/login')
+        return res.json({status: "error", data: err})
     }
     
     // const user = await User.findOneOrCreate({})
