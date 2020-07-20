@@ -5,7 +5,7 @@ const cors = require("cors")
 
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/product');
-
+var authRouter = require('./routes/auth')
 var app = express();
 
 app.use(logger('dev'));
@@ -42,5 +42,5 @@ async function MongoDBConnection(app) {
 app.use(cors())
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
-
+app.use('/auth', authRouter)
 module.exports = app;
