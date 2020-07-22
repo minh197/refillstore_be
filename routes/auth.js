@@ -5,4 +5,8 @@ const {loginFacebook} = require("../controllers/authController")
 
 router.route("/login/facebook").get(loginFacebook)
 
+
+
+  
+
 module.exports = router; 
