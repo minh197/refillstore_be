@@ -11,7 +11,7 @@ var app = express();
 app.use(logger('dev'));
 app.use(express.json());
 // DB Config
- const mongoURI = "mongodb://localhost:27017/refillstore"
+ const mongoURI = process.env.MONGO_URI
 mongoose.Promise = global.Promise;
 
 let defaults = {};
